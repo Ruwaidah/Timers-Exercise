@@ -1,13 +1,17 @@
 // countdown
 // Write a function called countdown that accepts a number as a parameter and every 1000 milliseconds decrements the value and console.logs it. Once the value is 0 it should log “DONE!” and stop.
 function countdown(num) {
-  num--;
-  const id = setInterval(() => {
-    if (num === 0) {
-      console.log("DONE!");
-      clearInterval(id);
-    } else console.log(num--);
-  }, 1000);
+  if (num <= 0) {
+    console.log("THE NUMBER SHOULD BE MORE THAN 0!");
+  } else {
+    num--;
+    const id = setInterval(() => {
+      if (num === 0) {
+        console.log("DONE!");
+        clearInterval(id);
+      } else console.log(num--);
+    }, 1000);
+  }
 }
 
 countdown(4);
